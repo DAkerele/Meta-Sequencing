@@ -1,0 +1,50 @@
+<!doctype html>
+<header>
+  <title>Sequencing(Admin)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+  <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/handsontable.full.min.css') }}">-->
+  
+</header>
+<html stlye  ="height:1000px; width:1000px">
+  <body style = "height:200px; width:200px">
+    <h4 id = "status" style = "margin:0;"></h4>
+    <!--<div id = "spreadsheet"></div>-->
+    <div style = "position:relative; left:20px; top:5px;" class = "table-container">
+     <!-- <form class = "load-form" action = "/load" method = "get">
+        <div class="form-group ">
+            <label for="id">ID:</label>
+            <input placeholder="ID" class="form-control" id = "id" required minlength="1" type = "text" name = "id"></input><br>
+        </div>
+        <button style = "position:relative; left:5px; top:5px;"  class="btn btn-info" id = "back" type="button">Back</button>
+        <button style = "position:relative; left:20px; top:5px;"class="btn btn-primary" id = "load-table">Load Table</button>
+      </form>-->
+      <form name = "request-form" action = "/pool/submit" class = "submit-form"  method = "post">
+        <div class="form-group">
+          <label for="name">Title/Name:</label>
+          <input placeholder="Name" class="form-control" id = "name"required minlength="1" type = "text" name = "name"></input><br>
+        </div>
+        <div class="form-group">
+          <label for="email">Tracking #:</label>
+          <input placeholder="Tracking #" class="form-control" id = "track_num" required minlength="1"  type = "text" name = "track_num" ></input><br>
+        </div>
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input placeholder="Date" class="form-control" id= "date" required minlength="1" type = "text" name = "date"></input><br>
+        </div>
+        <div class="form-group">
+          <label for="amp">Illuminarum:</label>
+          <input placeholder="Illuminarum" class="form-control" id = "ill" required minlength="1" type = "text" name = "ill"></input><br>
+        </div>
+       <!-- <button style = "position:relative; left:5px; top:5px;"  class="btn btn-info" id = "load" type="button">Load</button>-->
+      	<button class="btn btn-primary" id = "submit">Submit</button>
+      </form>
+    </div>
+  </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--<script src="{{ url_for('static', filename='handsontable.full.min.js') }} "></script>-->
+<!--<script src="{{ url_for('static', filename='pools-script.js') }} "></script>-->
+
+</html>
+  

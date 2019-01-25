@@ -10,12 +10,11 @@
   <body style = "height:1000px; width:1000px">
     <h4 id = "status" style = "margin:0;"></h4>
     <div id = "spreadsheet"></div>
-    <button style = "position:relative; left:20px; top:5px;"class="btn btn-primary" id = "submit">Submit</button>
+    <button style = "position:relative; left:20px; top:5px;"class="btn btn-primary" id = "update">Update</button>
   </body>
-  <script>var req_data = {{data|tojson}};</script>
+  <script>var load_data = {{data|tojson}};</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="{{ url_for('static', filename='handsontable.full.min.js') }} "></script>
-<script src="{{ url_for('static', filename='Database.js') }} "></script>
+<script src="{{ url_for('static', filename='load.js') }} "></script>
 
 </html>
-  

@@ -1,6 +1,6 @@
 
-var headers = ["Sample ID","Name", "Plate Location", "Description"];
-var data = [["CTGGC", "Sample #1", "A1","foo"]];
+var headers = ["Request ID", "Well Location", "Amplicon"];
+var data = [["1", "A1", "###",]];
 var idRegex = new RegExp("[a-zA-Z_-]");
 
 //var save = document.getElementById("submit");
@@ -180,13 +180,13 @@ function arraymove(arr, fromIndex, toIndex) {
 Handsontable.dom.addEvent(submit, 'click', function() {//save data from table into flask
     hot.validateCells(function(valid){
         if(valid){
-            var data = hot.getData();
+            var well_data = hot.getData();
             
             // save all cell's data
             $.ajax({
-              url: '/success',
+              url: '/pool/success',
               type: 'POST',
-              data: JSON.stringify({data:data,req_data:req_data}),
+              data: JSON.stringify({pool_data:pool_data,well_data:well_data}),
               contentType: 'application/json; charset=utf-8',
               //dataType: 'json',
               success: function(res) {

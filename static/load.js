@@ -145,6 +145,15 @@ var settings = {//setting for handsontable
 
 
 hot = new Handsontable(container, settings);
+$.ajax({
+    type: 'GET',
+    //data: JSON.stringify({data:data,req_data:req_data}),
+    contentType: 'application/json; charset=utf-8',
+    //dataType: 'json',
+    success: function(res) {
+        hot.loadData(load_data);           
+    }
+});
 
 
 hot.updateSettings({//adds validator to table
@@ -177,14 +186,14 @@ function arraymove(arr, fromIndex, toIndex) {
 });*/
 
 
-Handsontable.dom.addEvent(submit, 'click', function() {//save data from table into flask
+Handsontable.dom.addEvent(update, 'click', function() {//save data from table into flask
     hot.validateCells(function(valid){
         if(valid){
             var data = hot.getData();
             
             // save all cell's data
             $.ajax({
-              url: '/success',
+              url: '/update',
               type: 'POST',
               data: JSON.stringify({data:data,req_data:req_data}),
               contentType: 'application/json; charset=utf-8',
