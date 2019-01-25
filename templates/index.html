@@ -1,0 +1,28 @@
+<!doctype html>
+<header>
+  <title>Sequencing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/handsontable.full.min.css') }}">
+  
+</header>
+<html stlye  ="height:1000px; width:1000px">
+  <body style = "height:1000px; width:1000px">
+    <h4 id = "status" style = "margin:0;"></h4>
+    <div id = "spreadsheet"></div>
+    <button id = "load" type="button">Load</button>
+    
+    <form action = "/" method = "post">
+    	ID:<input id = "id" required minlength="1" type = "text" name = "id"></input><br>
+    	E-mail:<input id = "email" required minlength="1"  type = "text" name = "email"></input><br>
+    	Title/Name:<input id = "tit"required minlength="1" type = "text" name = "tit"></input><br>
+    	Amplicon:<input id = "amp" required minlength="1" type = "text" name = "amp"></input><br>
+    	Date:<input id= "date" required minlength="1" type = "text" name = "date"></input>
+    	<button id = "submit">Submit</button>
+    </form>
+  </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='handsontable.full.min.js') }} "></script>
+<script src="{{ url_for('static', filename='Database.js') }} "></script>
+
+</html>
+  
