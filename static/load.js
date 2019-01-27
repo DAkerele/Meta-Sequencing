@@ -190,12 +190,13 @@ Handsontable.dom.addEvent(update, 'click', function() {//save data from table in
     hot.validateCells(function(valid){
         if(valid){
             var data = hot.getData();
-            
+            const urlParams = new URLSearchParams(window.location.search);
+            const req_id = urlParams.get('id');
             // save all cell's data
             $.ajax({
               url: '/update',
               type: 'POST',
-              data: JSON.stringify({data:data,req_data:req_data}),
+              data: JSON.stringify({data:data,id:req_id}),
               contentType: 'application/json; charset=utf-8',
               //dataType: 'json',
               success: function(res) {
